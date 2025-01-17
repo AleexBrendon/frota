@@ -14,9 +14,13 @@ return new class extends Migration
     Schema::create('abastecimentos', function (Blueprint $table) {
         $table->id();
         $table->string('veiculo');
-        $table->decimal('quantidade_litros', 8, 2);
+        $table->string('condutor');
+        $table->string('filial');
+        $table->decimal('litros', 8, 2);
+        $table->decimal('km_rodados');
         $table->decimal('valor_total', 8, 2);
         $table->date('data_abastecimento');
+        $table->decimal('odometro');
         $table->timestamps();
     });
 }

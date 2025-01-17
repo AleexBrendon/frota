@@ -9,5 +9,5 @@ class Abastecimento extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['veiculo', 'litros', 'valor_total', 'data_abastecimento'];
+    protected $fillable = ['veiculo',  'condutor',  'filial', 'litros', 'km_rodados', 'valor_total', 'data_abastecimento', 'odometro'];
 }

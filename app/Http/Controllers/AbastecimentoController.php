@@ -24,13 +24,17 @@ class AbastecimentoController extends Controller
     {
         $validated = $request->validate([
             'veiculo' => 'required|string|max:255',
+            'condutor' => 'required|string|max:255',
+            'filial' => 'required|string|max:255',
             'litros' => 'required|numeric',
+            'km_rodados' => 'required|string|max:255',
             'valor_total' => 'required|numeric',
             'data_abastecimento' => 'required|date',
+            'odometro' => 'required|string|max:255',
         ]);
 
         Abastecimento::create($validated);
-        return redirect()->route('abastecimentos.index')->with('success', 'Abastecimento adicionado com sucesso!');
+        return redirect()->route('abastecimentos.index')->with('Abastecimento adicionado com sucesso!');
     }
 
     public function edit(Abastecimento $abastecimento)
@@ -43,6 +47,8 @@ class AbastecimentoController extends Controller
         $validated = $request->validate([
             'veiculo' => 'required|string|max:255',
             'litros' => 'required|numeric',
+            'km_rodados' => 'required|numeric',
+            'km_l' => 'required|numeric',
             'valor_total' => 'required|numeric',
             'data_abastecimento' => 'required|date',
         ]);

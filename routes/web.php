@@ -9,7 +9,8 @@ Route::get('/', function () {
 });
 
 Route::resource('abastecimentos', AbastecimentoController::class);
-
+Route::get('/abastecimentos', [AbastecimentoController::class, 'index'])->name('abastecimentos.index');
+Route::post('/abastecimentos/create', [AbastecimentoController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');

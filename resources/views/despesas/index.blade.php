@@ -4,22 +4,24 @@
             <div class="relative mx-4 mt-4 overflow-hidden text-slate-700 bg-white rounded-none bg-clip-border">
                 <div class="flex items-center justify-between ">
                     <div>
-                        <h3 class="text-lg font-semibold text-slate-800">Monitoramento</h3>
-                        <p class="text-slate-500">Abastecimentos Realizados</p>
+                        <h3 class="text-lg font-semibold text-slate-800">Despesas - Frota Idealnet</h3>
+                        <p class="text-slate-500">Despesas Realizadas</p>
                     </div>
                     <div class="shrink-0">
-                        <a href="{{ route('abastecimentos.create') }}">
+                        <a href="{{ route('despesas.create') }}">
                             <button
                                 class="flex select-none items-center gap-2 rounded bg-slate-800 py-2.5 px-4 text-xs font-semibold text-white shadow-md shadow-slate-900/10 transition-all hover:shadow-lg hover:shadow-slate-900/20 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                 type="button">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-fuel-pump-fill" viewBox="0 0 16 16">
-                                    <path d="M1 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v8a2 2 0 0 1 2 2v.5a.5.5 0 0 0 1 0V8h-.5a.5.5 0 0 1-.5-.5V4.375a.5.5 0 0 1 .5-.5h1.495c-.011-.476-.053-.894-.201-1.222a.97.97 0 0 0-.394-.458c-.184-.11-.464-.195-.9-.195a.5.5 0 0 1 0-1q.846-.002 1.412.336c.383.228.634.551.794.907.295.655.294 1.465.294 2.081V7.5a.5.5 0 0 1-.5.5H15v4.5a1.5 1.5 0 0 1-3 0V12a1 1 0 0 0-1-1v4h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1zm2.5 0a.5.5 0 0 0-.5.5v5a.5.5 0 0 0 .5.5h5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-newspaper" viewBox="0 0 16 16">
+                                    <path d="M0 2.5A1.5 1.5 0 0 1 1.5 1h11A1.5 1.5 0 0 1 14 2.5v10.528c0 .3-.05.654-.238.972h.738a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 1 1 0v9a1.5 1.5 0 0 1-1.5 1.5H1.497A1.497 1.497 0 0 1 0 13.5zM12 14c.37 0 .654-.211.853-.441.092-.106.147-.279.147-.531V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5v11c0 .278.223.5.497.5z" />
+                                    <path d="M2 3h10v2H2zm0 3h4v3H2zm0 4h4v1H2zm0 2h4v1H2zm5-6h2v1H7zm3 0h2v1h-2zM7 8h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2zm-3 2h2v1H7zm3 0h2v1h-2z" />
                                 </svg>
-                                Add Abastecimento
+                                Add Despesa
                             </button>
                         </a>
                     </div>
                 </div>
+
             </div>
             <div class="p-0 overflow-scroll">
                 <table class="w-full mt-4 text-left table-auto min-w-max">
@@ -29,7 +31,7 @@
                                 class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
                                 <p
                                     class="flex items-center justify-between gap-2 font-sans text-sm font-normal leading-none text-slate-500">
-                                    Técnico
+                                    NF-s
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -53,7 +55,7 @@
                                 class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
                                 <p
                                     class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
-                                    Litro
+                                    Modelo
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -65,7 +67,7 @@
                                 class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
                                 <p
                                     class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
-                                    Km Rodados
+                                    Tipo
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -76,14 +78,14 @@
                             <th
                                 class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
                                 <p
-                                    class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">Km/L
+                                    class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">Valor
                                 </p>
                             </th>
                             <th
                                 class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">
                                 <p
                                     class="flex items-center justify-between gap-2 font-sans text-sm  font-normal leading-none text-slate-500">
-                                    Valor
+                                    Pagamento
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
                                         stroke="currentColor" aria-hidden="true" class="w-4 h-4">
                                         <path stroke-linecap="round" stroke-linejoin="round"
@@ -105,46 +107,45 @@
                             </th>
                         </tr>
                     </thead>
-                    
                     <tbody>
-                    @foreach ($abastecimentos as $abastecimento)
+                        @foreach ($despesas as $despesa)
                         <tr>
                             <td class="p-4 border-b border-slate-200">
                                 <div class="flex flex-col">
                                     <p class="text-sm font-semibold text-slate-700">
-                                        {{ $abastecimento->condutor }}
+                                        {{ $despesa->nfs }}
                                     </p>
                                 </div>
                             </td>
                             <td class="p-4 border-b border-slate-200">
                                 <div class="flex flex-col">
                                     <p class="text-sm font-semibold text-slate-700">
-                                        {{ $abastecimento->filial }}
+                                        {{ $despesa->filial }}
                                     </p>
                                 </div>
                             </td>
                             <td class="p-4 border-b border-slate-200">
                                 <p class="text-sm text-slate-500">
-                                    {{ $abastecimento->litros }}
+                                    {{ $despesa->modelo }}
                                 </p>
                             </td>
                             <td class="p-4 border-b border-slate-200">
                                 <p class="text-sm text-slate-500">
-                                    {{ $abastecimento->km_rodados }}
+                                    {{ $despesa->tipo }}
                                 </p>
                             </td>
                             <td class="p-4 border-b border-slate-200">
                                 <p class="text-sm text-slate-500">
-                                    {{ $abastecimento->km_rodados }}/{{ $abastecimento->litros }}
+                                    {{ $despesa->valor_total }}
                                 </p>
                             </td>
                             <td class="p-4 border-b border-slate-200">
                                 <p class="text-sm text-slate-500">
-                                    {{ $abastecimento->valor_total }}
+                                    {{ $despesa->pagamento }}
                                 </p>
                             </td>
-                            <td class="grid grid-cols-2 gap-4 h-48place-content-center">
-                                <a href="{{ route('abastecimentos.edit', $abastecimento->id) }}">
+                            <td class="flex pt-2">
+                                <a href="{{ route('despesas.edit', $despesa->id) }}">
                                     <button
                                         class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                                         type="button">
@@ -158,11 +159,12 @@
                                         </span>
                                     </button>
                                 </a>
-                                <form action="{{ route('abastecimentos.destroy', $abastecimento->id) }}" method="POST">
-                                @csrf
-                                @method('DELETE')
+                                <form action="{{ route('despesas.destroy', $despesa->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
                                     <button
-                                        type="submit" class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none">
+                                        type="submit" class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                                        type="button">
                                         <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5m3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0z" />
@@ -171,47 +173,11 @@
                                         </span>
                                     </button>
                                 </form>
-                                <button
-                                    class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                    type="button">
-                                    <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
-                                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-                                        </svg>
-                                    </span>
-                                </button>
-                                <button
-                                    class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                                    type="button">
-                                    <span class="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-speedometer2" viewBox="0 0 16 16">
-                                            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4M3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707M2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10m9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5m.754-4.246a.39.39 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.39.39 0 0 0-.029-.518z" />
-                                            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A8 8 0 0 1 0 10m8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3" />
-                                        </svg>
-                                    </span>
-                                </button>
                             </td>
                         </tr>
                         @endforeach
                     </tbody>
                 </table>
-            </div>
-            <div class="flex items-center justify-between p-3">
-                <p class="block text-sm text-slate-500">
-                    Page 1 of 10
-                </p>
-                <div class="flex gap-1">
-                    <button
-                        class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                        type="button">
-                        Previous
-                    </button>
-                    <button
-                        class="rounded border border-slate-300 py-2.5 px-3 text-center text-xs font-semibold text-slate-600 transition-all hover:opacity-75 focus:ring focus:ring-slate-300 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
-                        type="button">
-                        Next
-                    </button>
-                </div>
             </div>
         </div>
     </div>

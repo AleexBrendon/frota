@@ -3,14 +3,11 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbastecimentoController;
+use App\Http\Controllers\DespesaController;
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('abastecimentos', AbastecimentoController::class);
-Route::get('/abastecimentos', [AbastecimentoController::class, 'index'])->name('abastecimentos.index');
-Route::post('/abastecimentos/create', [AbastecimentoController::class, 'store']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -21,5 +18,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::resource('abastecimentos', AbastecimentoController::class);
+Route::get('/abastecimentos', [AbastecimentoController::class, 'index'])->name('abastecimentos.index');
+Route::post('/abastecimentos/create', [AbastecimentoController::class, 'store']);
+
+Route::resource('despesas', DespesaController::class);
+Route::get('/despesas', [DespesaController::class, 'index'])->name('despesas.index');
+Route::post('/despesas/create', [DespesaController::class, 'store']);
 
 require __DIR__.'/auth.php';

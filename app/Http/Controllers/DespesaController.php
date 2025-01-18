@@ -20,14 +20,19 @@ class DespesaController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'veiculo' => 'required|string|max:255',
-            'condutor' => 'required|string|max:255',
+            'nfs' => 'required|string|max:255',
             'filial' => 'required|string|max:255',
-            'litros' => 'required|numeric',
-            'km_rodados' => 'required|string|max:255',
+            'modelo' => 'required|string|max:255',
+            'veiculo' => 'required|string|max:255',
+            'tipo' => 'required|string|max:255',
+            'condutor' => 'required|string|max:255',
+            'fornecedor' => 'required|string|max:255',
+            'descricao' => 'required|string|max:255',
+            'valor_produto' => 'required|numeric',
             'valor_total' => 'required|numeric',
-            'data_abastecimento' => 'required|date',
-            'odometro' => 'required|string|max:255',
+            'data_emissao' => 'required|date',
+            'data_pagamento' => 'required|date',
+            'pagamento' => 'required|numeric',
         ]);
 
         Despesa::create($validated);

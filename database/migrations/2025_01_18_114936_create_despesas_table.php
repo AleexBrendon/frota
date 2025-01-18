@@ -22,7 +22,7 @@ return new class extends Migration
             $table->decimal('valor_total', 8, 2);
             $table->date('data_emissao');
             $table->date('data_pagamento');
-            $table->string('pagamento');
+            $table->string('pagamento', 8, 2);
             $table->timestamps();
         });
     }

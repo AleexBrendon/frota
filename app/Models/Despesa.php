@@ -9,5 +9,5 @@ class Despesa extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['veiculo',  'condutor',  'filial', 'litros', 'km_rodados', 'valor_total', 'data_abastecimento', 'odometro'];
+    protected $fillable = ['nfs',  'filial',  'modelo', 'veiculo', 'tipo', 'condutor', 'fornecedor', 'descricao', 'valor_produto', 'valor_total', 'data_emissao', 'data_pagamento', 'pagamento'];
 }

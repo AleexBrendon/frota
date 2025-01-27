@@ -26,5 +26,12 @@ Route::post('/abastecimentos/create', [AbastecimentoController::class, 'store'])
 Route::resource('despesas', DespesaController::class);
 Route::get('/despesas', [DespesaController::class, 'index'])->name('despesas.index');
 Route::post('/despesas/create', [DespesaController::class, 'store']);
+Route::get('/despesas/{id}/show', [DespesaController::class, 'show'])->name('despesas.show');
+Route::get('/despesas/{id}/download', [DespesaController::class, 'download'])->name('despesas.download');
+
+
+
+
+
 
 require __DIR__.'/auth.php';

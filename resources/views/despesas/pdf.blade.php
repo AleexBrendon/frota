@@ -1,0 +1,2 @@
+<iframe src="{{ $fileUrl }}" width="100%" height="600px"></iframe>
+<img src="{{ $fileUrl }}" alt="Imagem da despesa" style="max-width: 100%;">

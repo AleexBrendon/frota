@@ -42,9 +42,9 @@ class AbastecimentoController extends Controller
         return view('abastecimentos.edit', compact('abastecimento'));
     }
 
-    public function update(Request $request, Abastecimento $abastecimento)
+    public function update(Request $request, $id)
     {
-        $validated = $request->validate([
+        $request->validate([
             'veiculo' => 'required|string|max:255',
             'litros' => 'required|numeric',
             'km_rodados' => 'required|numeric',
@@ -52,8 +52,10 @@ class AbastecimentoController extends Controller
             'valor_total' => 'required|numeric',
             'data_abastecimento' => 'required|date',
         ]);
+        $abastecimento = Abastecimento::findOrFail($id);
 
-        $abastecimento->update($validated);
+        $abastecimento->update($request->all());
+
         return redirect()->route('abastecimentos.index')->with('success', 'Abastecimento atualizado com sucesso!');
     }
 

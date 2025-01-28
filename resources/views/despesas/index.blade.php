@@ -39,28 +39,30 @@
                 <table class="w-full mt-4 text-left table-auto min-w-max">
                     <thead>
                         <tr>
-                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">NF-s</th>
-                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Filial</th>
-                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Modelo</th>
-                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Tipo</th>
-                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Valor</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">NF-s</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Filial</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Modelo</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Tipo</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Valor</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Fornecedor</th>
                             <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Pagamento</th>
-                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100">Opções</th>
+                            <th class="p-4 transition-colors cursor-pointer border-y border-slate-200 bg-slate-50 hover:bg-slate-100 text-center">Opções</th>
                         </tr>
                     </thead>
                     <tbody id="despesa-table">
                         @foreach ($despesas as $despesa)
                         <tr>
-                            <td class="p-4 border-b border-slate-200">{{ $despesa->nfs }}</td>
-                            <td class="p-4 border-b border-slate-200">{{ $despesa->filial }}</td>
-                            <td class="p-4 border-b border-slate-200">{{ $despesa->modelo }}</td>
-                            <td class="p-4 border-b border-slate-200">{{ $despesa->tipo }}</td>
-                            <td class="p-4 border-b border-slate-200">{{ $despesa->valor_total }}</td>
-                            <td class="p-4 border-b border-slate-200">
-                                <p class="text-center @if($despesa->pagamento == 'PENDENTE') bg-red-500 text-white rounded-lg @elseif($despesa->pagamento == 'EFETUADO') bg-green-500 text-white rounded-lg @endif">{{ $despesa->pagamento }}</p>
+                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->nfs }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->filial }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->modelo }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->tipo }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->valor_total }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->fornecedor }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center">
+                                <p class="@if($despesa->pagamento == 'PENDENTE') bg-red-500 text-white rounded-lg @elseif($despesa->pagamento == 'EFETUADO') bg-green-500 text-white rounded-lg @endif">{{ $despesa->pagamento }}</p>
                             </td>
                             <td class="border-b border-slate-200">
-                                <div class="flex">
+                                <div class="flex items-center justify-center gap-2">
                                     <a href="{{ route('despesas.edit', $despesa->id) }}">
                                         <button class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-xs font-medium uppercase text-slate-900 transition-all hover:bg-slate-900/10 active:bg-slate-900/20 flex justify-center items-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" class="w-4 h-4">
@@ -68,6 +70,7 @@
                                             </svg>
                                         </button>
                                     </a>
+
                                     <!-- Formulário de exclusão com confirmação -->
                                     <form action="{{ route('despesas.destroy', $despesa->id) }}" method="POST" onsubmit="return confirm('Tem certeza que deseja excluir essa despesa?')">
                                         @csrf

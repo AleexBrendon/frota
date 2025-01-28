@@ -46,7 +46,6 @@
                 <button @click="theme = (theme === 'dark' ? 'light' : 'dark'); localStorage.setItem('theme', theme)" id="toggle-theme">
                     <i :class="theme === 'dark' ? 'fas fa-moon text-white' : 'fas fa-sun text-white'" id="theme-icon"></i>
                 </button>
-
             </div>
 
             <!-- Hamburger -->
@@ -61,3 +60,4 @@
         </div>
     </div>
 </nav>
+

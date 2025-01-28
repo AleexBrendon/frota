@@ -1,1 +1,2 @@
-<img src="./img/logo.png" alt="" class="w-28">
+<img src="https://checklist.idealnetfibra.com.br/assets/media/logos/logo-light.png" class="w-28">
+

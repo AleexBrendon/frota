@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AbastecimentoController;
 use App\Http\Controllers\DespesaController;
+use App\Http\Controllers\VeiculoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,8 +30,10 @@ Route::post('/despesas/create', [DespesaController::class, 'store']);
 Route::get('/despesas/{id}/show', [DespesaController::class, 'show'])->name('despesas.show');
 Route::get('/despesas/{id}/download', [DespesaController::class, 'download'])->name('despesas.download');
 
-
-
+Route::resource('veiculos', VeiculoController::class);
+Route::get('/veiculos', [VeiculoController::class, 'index'])->name('veiculos.index');
+Route::post('/veiculos/create', [VeiculoController::class, 'store']);
+Route::get('/veiculos/{id}/show', [VeiculoController::class, 'show'])->name('veiculos.show');
 
 
 

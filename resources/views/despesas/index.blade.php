@@ -53,12 +53,12 @@
                         @foreach ($despesas as $despesa)
                         <tr>
                             <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->nfs }}</td>
-                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->filial }}</td>
-                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->modelo }}</td>
-                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->tipo }}</td>
-                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->valor_total }}</td>
-                            <td class="p-4 border-b border-slate-200 text-center">{{ $despesa->fornecedor }}</td>
-                            <td class="p-4 border-b border-slate-200 text-center">
+                            <td class="p-4 border-b border-slate-200 text-center uppercase">{{ $despesa->filial }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center uppercase">{{ $despesa->modelo }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center uppercase">{{ $despesa->tipo }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center uppercase">{{ $despesa->valor_total }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center uppercase">{{ $despesa->fornecedor }}</td>
+                            <td class="p-4 border-b border-slate-200 text-center uppercase">
                                 <p class="@if($despesa->pagamento == 'PENDENTE') bg-red-500 text-white rounded-lg @elseif($despesa->pagamento == 'EFETUADO') bg-green-500 text-white rounded-lg @endif">{{ $despesa->pagamento }}</p>
                             </td>
                             <td class="border-b border-slate-200">
